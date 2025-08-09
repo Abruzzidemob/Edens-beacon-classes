@@ -1,10 +1,14 @@
-// Ask the user for their name using prompt
-let name = prompt("What is your name?");
+// Select the button and greeting element
+const greeting = document.getElementById("greeting");
+const askNameBtn = document.getElementById("askNameBtn");
 
-// If user clicks "Cancel" or leaves it blank, use a default
-if (!name) {
-  name = "Guest";
-}
+// Add click event listener
+askNameBtn.addEventListener("click", function () {
+  let name = prompt("What is your name?");
 
-// Update the h1 text in the HTML
-document.getElementById("greeting").textContent = "Hello, " + name + "!";
+  if (!name) {
+    name = "Guest";
+  }
+
+  greeting.textContent = "Hello, " + name + "!";
+});
